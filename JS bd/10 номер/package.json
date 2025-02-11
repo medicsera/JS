@@ -1,0 +1,21 @@
+{
+  "surname": "Корабл",
+  "name": "Иван",
+  "fathername": "Иванович ",
+  "dateBith": 2010,
+  "class": 7,
+  "maxclass": 11,
+  "favoritedicipline": ["Math", "Russian ", "Geography"],
+  "placeOfResident": {
+    "country": "Russia ",
+    "city": "Kemerovo ",
+    "house": "20a ",
+    "apartament": 500
+  },
+  "placeOfLiving": {
+    "country": "Russia ",
+    "city": "Kemerovo ",
+    "house": "22 ",
+    "apartament": " "
+  }
+}
