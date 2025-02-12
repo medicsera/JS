@@ -145,24 +145,20 @@ else{
 // switch (count){
 //     case 1:
 //         console.log("На ветке сидит 1 ворона")
+//         break
 //     case 2:
-//         console.log("На ветке сидит "+ count + " вороны")
-//     case  3:
-//         console.log("На ветке сидит "+ count + " вороны")
+//     case 3:
 //     case 4:
 //         console.log("На ветке сидит "+ count + " вороны")
-//     case 5 :
-//         console.log("На ветке сидит "+ count + " ворон")
+//         break
+//     case 5:
 //     case 6:
-//         console.log("На ветке сидит "+ count + " ворон")
 //     case 7:
-//         console.log("На ветке сидит "+ count + " ворон")
 //     case 8:
-//         console.log("На ветке сидит "+ count + " ворон")
 //     case 9:
-//         console.log("На ветке сидит "+ count + " ворон")
 //     case 10:
 //         console.log("На ветке сидит "+ count + " ворон")
+//         break
 // }
 
 console.log("4 номер")
@@ -193,7 +189,7 @@ console.log(sum)
 
 console.log("6 номер")
 
-let ab = 2
+let ab = 3
 let ba = 3
 let res = ab
 let coun = 1
