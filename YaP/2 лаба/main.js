@@ -222,3 +222,93 @@ console.log(randommassive)
 // его на экран в обратном порядке; в противном случае вывести на экран номер
 // первого элемента, нарушающего упорядоченность
 
+let odnoarr = [10,7,5,3,2]
+for (let i = 0; i < odnoarr.length; i++){
+    if (odnoarr[i] > odnoarr[i+1]){
+        if (i === odnoarr.length-2){
+            console.log(odnoarr)
+        }
+    }
+    else if(odnoarr[i]<odnoarr[i+1]){
+        console.log(odnoarr[i+1])
+        break
+    }
+}
+
+//12. Дан одномерный числовой массив. Домножить на 3 все его положительные
+// элементы с нечетными индексами; все отрицательные элементы, имеющие четные
+// индексы, уменьшить в 5 раз.
+
+let twelvearr = [-1,5,7,-2,8]
+
+for (let i = 0; i < twelvearr.length; i++){
+    if(i % 2 == 0){
+        if(twelvearr[i]<0){
+            twelvearr[i] /= 5
+        }
+    }
+    else{
+        if(twelvearr[i]>0){
+            twelvearr[i] *= 3
+        }
+    }
+}
+console.log(twelvearr)
+
+//13. Дана матрица 5 х 5. Вывести элементы матрицы, принадлежащие интервалу [-5; 7].
+
+let matrixx = [
+    [-1,2,3,4,-5],
+    [6,7,-8,9,10],
+    [11,12,13,14,15],
+    [16,17,18,-19,20],
+    [21,22,23,24,25]
+]
+let matrixflat = matrixx.flat()
+matrixflat.forEach((element) => {
+    if (element >= -5 && element <=7){
+        console.log(element)
+    }
+})
+
+//14. Дана действительная матрица размера MN. Найти сумму наибольших значений
+// элементов ее строк, а также произведение наименьших элементов ее столбцов.
+let m = 5
+let n = 3
+function createMatrixMxN(m,n) {
+    return Array(m).fill().map(() =>
+        Array(n).fill().map(() => Math.floor(Math.random()* (15 - -15 + 1)) + -15))
+}
+let matrix = createMatrixMxN(m,n)
+console.log(matrix)
+let summax = 0
+let mulmin = 1
+for (let i = 0; i < m;i++){
+    const rowmax =  Math.max(...matrix[i])
+    summax += rowmax
+}
+for (let j = 0; j < n; j++){
+    let mincolumn = matrix[0][j]
+    for(let i = 0; i < m; i++){
+        if (matrix[i][j]<mincolumn)
+            mincolumn = Math.min(matrix[i][j])
+    }
+    mulmin *= mincolumn
+}
+console.log("Сумма наибольших значений элементов ее строк: ", summax)
+console.log("Произведение наименьших элементов ее столбцов: ", mulmin)
+
+//15. Создать ассоциированный массив, содержащий названия книг, организованных по
+// авторам. Имена полей будут авторы ("Пушкин", "Есенин", "Данцова" и пр.), а
+// элементами – названия книг. Просмотреть созданный массив в цикле, выводя автора
+// и связанные с ним книги на экран. У одного автора может быть более одной книги.
+
+let books = new Map([
+    ['Дубровский','Пушкин'],
+    ['Бородино','Лермонтов'],
+    ['Мертвые души','Гоголь'],
+    ['Капитанская дочка','Пушкин']
+])
+books.forEach(function (key,value){
+    console.log(key,value)
+});
