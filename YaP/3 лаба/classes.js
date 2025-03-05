@@ -114,13 +114,53 @@ function tree(){
 // Продемонстрируйте и протестируйте работу всех методов класса.
 
 function four(){
-    class Stock{
-        constructor() {
+    class Box {
+        constructor(weight, volume) {
+            this.weight = weight;
+            this.volume = volume;
         }
-        stocks = [[]]
-        add(w,v) {
+    }
+
+    class Stock {
+        constructor() {
+            this.boxes = [];
+            this.counter = 0;
+        }
+
+        addBox(w, v) {
+            const newBox = new Box(w, v);
+            this.boxes.push(newBox);
+            this.counter++;
+        }
+
+        getByW(min_w) {
+            for (let box of this.boxes) {
+                if (box.weight >= min_w) {
+                    return this.boxes.indexOf(box);
+                }
+            }
+            return -1;
+        }
+        getByV(min_v) {
+            for (let box of this.boxes) {
+                if (box.volume >= min_v) {
+                    return this.boxes.indexOf(box);
+                }
+            }
+            return -1;
 
         }
     }
+    const stock = new Stock();
+    stock.addBox(10, 100);
+    stock.addBox(15, 200);
+    stock.addBox(5, 50);
+    stock.addBox(20, 150);
+
+    console.log(stock.getByW(20));
+    console.log(stock.getByW(25));
+
+    console.log(stock.getByV(50));
+    console.log(stock.getByV(250));
 }
 four()
