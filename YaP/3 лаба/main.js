@@ -69,10 +69,45 @@ four()
 
 function five(){
     function multiplyNumeric(obj){
-        let sum = 0
-        sum += obj
-        return sum
+        for (let key in obj){
+            if (typeof obj[key] === "number"){
+                obj[key] *= 2
+            }
+        }
     }
-    let obj = [2,3,5]
-    console.log(multiplyNumeric(obj))
+    let object = {
+        num1: 2,
+        num2: 3,
+        num3: 5,
+        string: "value"
+
+    }
+    multiplyNumeric(object)
+    console.log(object)
 }
+five()
+
+//6. Создайте объект calculator (калькулятор) с тремя методами:
+//  read(a, b) (читать) принимает два значения и сохраняет их как свойства объекта.
+//  sum() (суммировать) возвращает сумму сохранённых значений.
+//  mul() (умножить) перемножает сохранённые значения и возвращает результат.
+
+function six (){
+    let calculator = {
+        read(a,b){
+            this.a = a;
+            this.b = b;
+        },
+        sum(){
+            return this.a + this.b;
+        },
+        mul(){
+            return this.a * this.b;
+        }
+    }
+    calculator.read(5,4)
+    console.log("sum: " + calculator.sum())
+    console.log("mul: " + calculator.mul())
+}
+six()
+
