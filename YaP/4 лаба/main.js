@@ -121,7 +121,7 @@ function two(){
     }
     usenotifications()
 }
-two()
+//two()
 
 //3. Дана функция вида F(x) = f1(x) + f2(x) + … + fn(x).
 // Реализуйте программу, которая вычисляет значение функции F(x) и выводит его на
@@ -188,7 +188,41 @@ function tree(){
         Math.floor(Math.random() * 1000)
     }
 
+    function notify(func, x, middleValue, callback){
+        func(x, (result) => {
+            const newMiddleValue = middleValue + result;
+            console.log("Промежуточный результат: ", newMiddleValue);
+            callback(newMiddleValue);
+        });
+    }
 
+    function calculate(x, functions, callback){
+        let middleResult = 0;
+        function nextF(index){
+            if (index < functions.length){
+                notify(functions[index],x,middleResult,(newresult) => {
+                    middleResult = newresult;
+                    nextF(index + 1);
+                })
+            }
+            else{
+                callback(middleResult);
+            }
+        }
+        nextF(0);
+    }
+    // const func2 = [f1,f2];
+    // calculate(3,func2, (result) => {
+    //     console.log("Для n = 2: ", result);
+    // })
+    // const func4 = [f1,f2,f3,f4];
+    // calculate(5,func4, (result) => {
+    //     console.log("Для n = 4: ", result);
+    // })
+    const func6 = [f1,f2,f3,f4,f5,f6];
+    calculate(3,func6, (result) => {
+        console.log("Для n = 6: ", result);
+    })
 
 }
 tree()
