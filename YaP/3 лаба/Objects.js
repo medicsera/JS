@@ -16,7 +16,7 @@ function one(){
 // Explorer”) и version (значение «9.0»). Выведите значения свойств на экран при
 // помощи цикла for in.
 function two(){
-    myBrowser = {
+   let myBrowser = {
         name: "Microsoft InternetExplorer",
         version: 9.0
     }
@@ -38,6 +38,9 @@ function tree(){
         return  true
     }
     let zeroobj = {}
+    let myBrowser = {
+        name:"Browser"
+    }
     console.log(isEmpty(myBrowser))
     console.log(isEmpty(zeroobj))
 }
