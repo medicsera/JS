@@ -8,7 +8,7 @@ function one(){
         __proto__: animal,
         jumps: true
     };
-    console.log(rabbit.jumps); // ? (1) выводит "true" т.к. rabbit перенемает свойство jumps,
+    console.log(rabbit.jumps); // ? (1) выводит "true" т.к. rabbit перенимает свойство jumps,
     // но при этом меняет его на своё значение "true"
     delete rabbit.jumps;
     console.log(rabbit.jumps); // ? (2) выводит "null" т.к. удаляется личное значение rabbit в виде

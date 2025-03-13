@@ -17,7 +17,7 @@ function one(){
 // помощи цикла for in.
 function two(){
    let myBrowser = {
-        name: "Microsoft InternetExplorer",
+        name: "Microsoft Internet Explorer",
         version: 9.0
     }
     for (key in myBrowser){
@@ -63,7 +63,7 @@ function four (){
     user.name = "Pete"; // работает
     console.log(user.name)
 // а это?
-   //user = 123; // не работает так как неопределяется переменная
+   //user = 123; // не работает так как не определяется переменная
 }
 four()
 
@@ -226,7 +226,7 @@ function ten(){
     let calcult = new Calculator()
     calcult.read(4,5)
     console.log(calcult.sum())
-    console.log( calcult.mul())
+    console.log(calcult.mul())
 }
 ten()
 

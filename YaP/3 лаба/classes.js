@@ -134,17 +134,19 @@ function four(){
         }
 
         getByW(min_w) {
-            for (let box of this.boxes) {
-                if (box.weight >= min_w) {
-                    return this.boxes.indexOf(box);
+            for (let i = 0; i < this.boxes.length; i++) {
+                if (this.boxes[i].weight >= min_w) {
+                    this.boxes.splice(i,1);
+                    return i;
                 }
             }
             return -1;
         }
         getByV(min_v) {
-            for (let box of this.boxes) {
-                if (box.volume >= min_v) {
-                    return this.boxes.indexOf(box);
+            for (let i = 0; i < this.boxes.length; i++) {
+                if (this.boxes[i].volume >= min_v) {
+                    this.boxes.splice(i,1);
+                    return i;
                 }
             }
             return -1;
