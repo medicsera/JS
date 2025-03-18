@@ -30,8 +30,7 @@ function two(){
     }
     class Rabbit extends Animal {
         constructor(name) {
-            super(); // надо добавить super() перед использованием метода this
-            this.name = name;
+            super(name); // надо добавить super() перед использованием метода this
             this.created = Date.now();
         }
     }
