@@ -9,7 +9,7 @@ function one(){
     });
     promise.then(console.log);
 }
-one()
+//one()
 //выводит 1
 
 //2. (2 балла) Проведите промисификацию функций (надо поменять функцию, которая
@@ -69,4 +69,53 @@ function two() {
     }
     promise()
 }
-two()
+//two()
+
+
+function tree(){
+    function f1(x){
+        return Promise.resolve(x * x)
+    }
+    function f2(x){
+        return Promise.resolve(x * 2)
+    }
+    function f3(x){
+        return Promise.resolve(-2)
+    }
+    function f4(x,callback){
+        return Promise.resolve(x + 5)
+    }
+    function f5(x,callback){
+        return Promise.resolve(x - 3)
+    }
+    function f6(x,callback){
+        return Promise.resolve(x / 2)
+    }
+
+
+    async function calculate(x, ...functions){
+        let res = 0;
+        for (let i = 0; i < functions.length; i++){
+            const middle_res = await functions[i](x)
+            res += middle_res
+            console.log("Промежуточный результат: ", middle_res)
+        }
+        return res
+    }
+
+
+    (async() => {
+        // const func2 = calculate(3,f1,f2);
+        // console.log(func2)
+        // const func4 = calculate(3,f1,f2,f3,f4;
+        // console.log(func4)
+        const func6 = calculate(3,f1,f2,f3,f4,f5,f6)
+        console.log(func6)
+    })()
+}
+//tree()
+
+
+function four(){
+
+}
