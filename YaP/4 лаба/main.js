@@ -2,12 +2,10 @@
 function one(){
     function ask_password(login,password,success,failure){
         const vowels = (string) =>{
-            const matches = string.match(/[aeiou]/gi);
-            return matches;
+            return string.match(/[aeiou]/gi);
         }
         const consonants = (string) => {
-            const matches = string.match(/[bcdfghjklmnpqrstvwxyz]/gi);
-            return matches;
+            return string.match(/[bcdfghjklmnpqrstvwxyz]/gi);
         }
         if (vowels(password).length === 3 && consonants(password).length === 3 && consonants(login).toString() === consonants(password).toString()) {
             success(login);
@@ -44,7 +42,7 @@ function one(){
     main("login","aaagln")
     main("login","fsfaa")
 }
-//one()
+one()
 
 //Запустите программу несколько раз и убедитесь, что функции выполняются каждый раз
 // в разном порядке.
@@ -89,7 +87,6 @@ function two(){
 // Вызов функций через callback:
     function usecallback(){
         console.log('start')
-        const read = new Notification("ReadConfig")
         readConfig('myConfig', () => {
             doQuery('select * from cities', () => {
                 httpGet('http://google.com', () => {
@@ -101,7 +98,7 @@ function two(){
             });
         });
     }
-   // usecallback()
+    //usecallback()
 
     function notification(f, ...args){
         return new Promise((resolve)=>{

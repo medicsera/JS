@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторная работа 6</title>
+    <style>
+        .even-sum {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<button onclick="firstA()"> 1)а </button>
+<button onclick="firstB()"> 1)b </button>
+<button onclick="firstC()"> 1)с </button>
+<button onclick="firstD()"> 1)d </button>
+<button onclick="firstE()"> 1)e </button>
+<button onclick="firstF()"> 1)f </button>
+<button onclick="firstG()"> 1)g </button>
+<button onclick="firstH()"> 1)h </button>
+<button onclick="firstI()"> 1)i </button>
+<button onclick="firstJ()"> 1)j </button>
+
+
+
+<div>
+    <br>
+    <b> Номер 2: </b> <br>
+    антон - 5 мирко 5
+    <table border="1" id="table_name">
+        <tr>
+            <td>1:1</td>
+            <td>1:2</td>
+            <td>1:3</td>
+            <td>1:4</td>
+            <td>1:5</td>
+        </tr>
+        <tr>
+            <td>2:1</td>
+            <td>2:2</td>
+            <td>2:3</td>
+            <td>2:4</td>
+            <td>2:5</td>
+        </tr>
+        <tr>
+            <td>3:1</td>
+            <td>3:2</td>
+            <td>3:3</td>
+            <td>3:4</td>
+            <td>3:5</td>
+        </tr>
+        <tr>
+            <td>4:1</td>
+            <td>4:2</td>
+            <td>4:3</td>
+            <td>4:4</td>
+            <td>4:5</td>
+        </tr>
+        <tr>
+            <td>5:1</td>
+            <td>5:2</td>
+            <td>5:3</td>
+            <td>5:4</td>
+            <td>5:5</td>
+        </tr>
+    </table>
+</div>
+<ul>
+    <li><a href="http://google.com">http://google.com</a></li>
+    <li><a href="/tutorial">/tutorial.html</a></li>
+    <li><a href="local/path">local/path</a></li>
+    <li><a href="ftp://ftp.com/my.zip">ftp://ftp.com/my.zip</a></li>
+    <li><a href="http://nodejs.org">http://nodejs.org</a></li>
+    <li><a href="http://internal.com/test">http://internal.com/test</a></li>
+</ul>
+
+<script>
+    function firstA(){
+        let x = parseFloat(prompt("Введите x"))
+        alert(`sin(${x}) = ${Math.sin(x)}`)
+    }
+    function firstB(){
+        const x1 = parseFloat(prompt("Введите x1"))
+        const y1 = parseFloat(prompt("Введите y1"))
+        const x2 = parseFloat(prompt("Введите x2"))
+        const y2 = parseFloat(prompt("Введите y2"))
+        const x = parseFloat(prompt("Введите x для проверки"))
+        const y = parseFloat(prompt("Введите для проверки"))
+
+        const inside = x >= Math.min(x1,x2) && x <= Math.max(x1,x2) && y >= Math.min(y1,y2) && y <= Math.max(y1,y2)
+        alert(`Точка ${inside ? 'принадлежит' : 'не принадлежит'} квадрату`)
+    }
+    function firstC(){
+        const n = parseInt(prompt("Введите число"))
+        let represent = false
+
+        for(let i = 1; i*i <= n; i++){
+            const j = Math.sqrt(n - i*i)
+            if (j === Math.floor(j)){
+                represent = true
+                break;
+            }
+        }
+        alert(`Число ${n} ${represent ? 'можно' : 'нельзя'} представить как сумму двух квадратов`)
+    }
+
+    function firstD(){
+        const email = prompt("Введите Email")
+        if (email.includes("@")){
+            alert("Всё хорошо")
+        } else
+            alert("Нет @")
+    }
+
+    function firstE(){
+        const s = prompt("Введите строку:");
+        let latins = 0;
+
+        for (const char of s) {
+            if (/[a-zA-Z]/.test(char)) latins++;
+        }
+
+        const procent = (latins / s.length * 100).toFixed(2);
+        alert(`Доля латинских букв: ${procent}%`);
+    }
+
+    function firstF(){
+        const s = prompt("Введите строку:");
+        const words = s.split(/\s+/);
+        const unique = [...new Set(words)];
+        alert(unique.join(' '));
+    }
+
+    function firstG(){
+        const n = parseInt(prompt("Введите n:"));
+        const arr = Array.from({length: n}, () => Math.floor(Math.random() * 1000));
+        const reversed = [...arr].reverse();
+
+        let output = "";
+        for (let i = 0; i < reversed.length; i++) {
+            output += reversed[i] + " ";
+            if ((i + 1) % 5 === 0) output += "\n";
+        }
+
+        alert("Исходный массив:\n" + arr.join(" ") + "\n\nОбратный порядок по 5 чисел в строке:\n" + output);
+    }
+
+    function firstH(){
+        const n = parseInt(prompt("Введите порядок матрицы n:"));
+        const matrix = Array.from({length: n}, () =>
+            Array.from({length: n}, () => Math.floor(Math.random() * 1000)));
+
+        // Находим min и max на диагоналях
+        let min = Infinity, max = -Infinity;
+        for (let i = 0; i < n; i++) {
+            // Главная диагональ
+            if (matrix[i][i] < min) min = matrix[i][i];
+            if (matrix[i][i] > max) max = matrix[i][i];
+
+            // Побочная диагональ
+            if (matrix[i][n-1-i] < min) min = matrix[i][n-1-i];
+            if (matrix[i][n-1-i] > max) max = matrix[i][n-1-i];
+        }
+        let vivod1 = "Матрица:\n";
+        for (const row of matrix) {
+            vivod1 += row.join("\t") + "\n";
+        }
+        alert(vivod1);
+
+        // Заменяем элементы на 0, кроме min и max
+        for (let i = 0; i < n; i++) {
+            // Главная диагональ
+            if (matrix[i][i] !== min && matrix[i][i] !== max) {
+                matrix[i][i] = 0;
+            }
+
+            // Побочная диагональ
+            if (matrix[i][n-1-i] !== min && matrix[i][n-1-i] !== max) {
+                matrix[i][n-1-i] = 0;
+            }
+        }
+
+        // Вывод матрицы
+        let vivod2 = "Результат замены:\n";
+        for (const row of matrix) {
+            vivod2 += row.join("\t") + "\n";
+        }
+        alert(vivod2);
+    }
+
+    function firstI(){
+        const n = parseInt(prompt("Введите количество дней:"));
+        const date = new Date();
+        date.setDate(date.getDate() + n);
+        alert(`Через ${n} дней будет: ${date.toLocaleDateString()}`);
+    }
+
+    function firstJ(){
+        const today = new Date();
+        const currentYear = today.getFullYear();
+        let nextSep = new Date(currentYear, 8, 1);
+
+        if (today > nextSep) {
+            nextSep = new Date(currentYear + 1, 8, 1);
+        }
+
+        const diffMonths = (nextSep.getFullYear() - today.getFullYear()) * 12 +
+            (nextSep.getMonth() - today.getMonth());
+
+        alert(`До 1 сентября осталось ${diffMonths} месяцев`);
+    }
+
+    const table = document.getElementById('table_name')
+    const rows = table.getElementsByTagName('tr');
+
+    for (let i = 0; i < rows.length; i++) {
+        const cells = rows[i].getElementsByTagName('td');
+
+        for (let j = 0; j < cells.length; j++) {
+            // Сумма индексов (i+1 - номер строки, j+1 - номер столбца)
+            const sum = (i + 1) + (j + 1);
+
+            // Проверяем четность суммы
+            if (sum % 2 === 0) {
+                cells[j].classList.add('even-sum');
+            }
+        }
+    }
+
+    const links = document.querySelectorAll('a[href]');
+
+    // Перебираем все ссылки
+    links.forEach(link => {
+        const href = link.getAttribute('href');
+
+        if (href.includes('://') && !href.startsWith('http://internal.com')) {
+            link.style.color = 'orange';
+        }
+    });
+
+    function clear(elem) {
+        elem.innerHTML = ''; // Простейший способ очистки содержимого
+    }
+
+    function addlist(){
+        const itemCount = parseInt(prompt("Введите количество пунктов списка:", "3"));
+
+        // Проверяем, что введено число
+        if (!isNaN(itemCount) && itemCount > 0) {
+            const list = document.getElementById('dynamicList');
+
+            for (let i = 1; i <= itemCount; i++) {
+                const itemText = prompt(`Введите текст для пункта ${i}:`, `Пункт ${i}`);
+
+                if (itemText) {
+                    const li = document.createElement('li');
+                    li.textContent = itemText;
+                    list.appendChild(li);
+                }
+            }
+        } else {
+            alert("Некорректное количество пунктов!");
+        }
+    }
+</script>
+<button onclick="addlist()"> Добавить список </button>
+
+<ol id="list">
+    <li>Привет</li>
+    <li>Мир</li>
+</ol>
+
+<script>
+    // Пример использования:
+    const list = document.getElementById('list');
+    clear(list); // Очищает список
+
+</script>
+
+<ul id="dynamicList"></ul>
+
+
+
+
+
+</body>
+</html>
