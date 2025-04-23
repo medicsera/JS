@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация в сервис</title>
+    <link href="loader.css" rel="stylesheet">
+    <link href="main.css" rel="stylesheet">
+</head>
+<body>
+<section id="loader-section">
+    <div class="loader-container">
+        <h2>Загрузка сайта, ровно 2 секунды почему-то..</h2>
+        <div class="loader-bar">
+            <div class="loader-progress"></div>
+        </div>
+    </div>
+</section>
+<script src="loader.js"></script>
+<main id="main-content" style="display: none;">
+    <section id="welcome-frame" class="frame active">
+        <div class="registration-container">
+            <h1>Добро пожаловать!</h1>
+            <p>Для продолжения работы необходимо зарегистрироваться</p>
+            <button id="start-registration" class="btn">Регистрация</button>
+        </div>
+    </section>
+    <section id="personal-frame" class="frame">
+        <div class="registration-container">
+            <div class="progress-bar">
+                <div class="progress-step" style="width: 0%;"></div>
+            </div>
+            <h2>Персональные данные</h2>
+            <form id="personal-form">
+                <div class="form-group">
+                    <label for="first-name">Имя</label>
+                    <input type="text" id="first-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="last-name">Фамилия</label>
+                    <input type="text" id="last-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="country">Страна</label>
+                    <select id="country" required></select>
+                </div>
+                <div class="form-group">
+                    <label for="password">Пароль</label>
+                    <input type="password" id="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Подтвердите пароль</label>
+                    <input type="password" id="confirm-password" required>
+                </div>
+                <div class="form-actions">
+                    <button type="button" id="cancel-personal" class="btn btn-secondary">Отмена</button>
+                    <button type="button" id="next-to-phone" class="btn btn-primary" disabled>Далее</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <section id="phone-frame" class="frame">
+        <div class="registration-container">
+            <div class="progress-bar">
+                <div class="progress-step" style="width: 33%;"></div>
+            </div>
+            <h2>Подтверждение телефона</h2>
+            <form id="phone-form">
+                <div class="form-group">
+                    <label for="phone">Номер телефона</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                <div class="form-group" id="code-group" style="display: none;">
+                    <label for="verification-code">Код подтверждения</label>
+                    <input type="text" id="verification-code" maxlength="4" placeholder="Введите 4-значный код">
+                </div>
+                <div class="form-actions">
+                    <button type="button" id="back-to-personal" class="btn btn-secondary">Назад</button>
+                    <button type="button" id="send-code" class="btn btn-primary">Отправить</button>
+                    <button type="button" id="next-to-payment" class="btn btn-primary" style="display: none;">Далее</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <section id="payment-frame" class="frame">
+        <div class="registration-container">
+            <div class="progress-bar">
+                <div class="progress-step" style="width: 66%;"></div>
+            </div>
+            <h2>Метод оплаты</h2>
+            <form id="payment-form">
+                <div class="form-group">
+                    <label for="card-number">Номер карты</label>
+                    <div class="card-number-group">
+                        <input type="text" id="card-part1" maxlength="4" size="4">
+                        <span>-</span>
+                        <input type="text" id="card-part2" maxlength="4" size="4">
+                        <span>-</span>
+                        <input type="text" id="card-part3" maxlength="4" size="4">
+                        <span>-</span>
+                        <input type="text" id="card-part4" maxlength="4" size="4">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="card-name">Имя на карте</label>
+                    <input type="text" id="card-name" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="expiry-date">Срок действия</label>
+                        <input type="text" id="expiry-date" placeholder="MM/YY" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cvv">CVV</label>
+                        <input type="text" id="cvv" maxlength="3" required>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="button" id="back-to-phone" class="btn btn-secondary">Назад</button>
+                    <button type="button" id="complete-registration" class="btn btn-primary">Завершить</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <section id="success-frame" class="frame">
+        <div class="registration-container">
+            <div class="progress-bar">
+                <div class="progress-step" style="width: 100%;"></div>
+            </div>
+            <div class="success-message">
+                <h2>Регистрация завершена!</h2>
+                <p>Спасибо за регистрацию. Теперь вы можете войти в систему, используя свои учетные данные.</p>
+                <button id="return-to-start" class="btn btn-primary">Вернуться на главную</button>
+            </div>
+        </div>
+    </section>
+</main>
+<script src="main.js"></script>
+</body>
+</html>

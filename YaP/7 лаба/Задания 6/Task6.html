@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Мирко Антон</title>
+    <script src = "Task6.js"></script>
+    <link href="Task6.css" rel = "stylesheet">
+</head>
+<body>
+<h1> Введите начисленную зарплату за следующие месяцы </h1>
+<table class="month_table">
+
+    <tr>
+        <th> Месяц </th>
+        <th> Сумма </th>
+    </tr>
+    <tr>
+        <td > Январь </td>
+        <td> <input type="number" id = january_input value="300">   </td>
+    </tr>
+    <tr>
+        <td > Февраль </td>
+        <td> <input type="number" id = february_input value="200"> </td>
+    </tr>
+    <tr>
+        <td > Март </td>
+        <td> <input type="number" id = march_input value="500"> </td>
+    </tr>
+    <tr>
+        <td > Апрель </td>
+        <td> <input type="number" id = april_input value="250"> </td>
+    </tr>
+    <tr>
+        <td > Май </td>
+        <td> <input type="number" id = may_input value="350"> </td>
+    </tr>
+    <tr>
+        <td > Июнь </td>
+        <td> <input type="number" id = june_input value="500"> </td>
+    </tr>
+</table>
+<table class="avg_table">
+    <tr>
+        <td> Средняя зарплата </td>
+        <td> <input type="number" id = "avg_sal" readonly >  </td>
+    </tr>
+    <tr>
+        <td>
+            <button id="calculate_avg_button" onclick="avg_salary()"> Вычислить </button>
+        </td>
+        <td>
+            <button id="reset_button" onclick="reset()"> Очистить </button>
+        </td>
+    </tr>
+
+</table>
+</body>
+</html>

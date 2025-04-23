@@ -1,0 +1,40 @@
+.month_table{
+    width: 400px;
+
+    padding: 5px 100px;
+    font-size: 25px;
+    td{
+        font-weight: bold;
+
+    }
+    th{
+        color: deepskyblue;
+        font-size: 30px;
+
+    }
+}
+.avg_table{
+    width: 600px;
+    padding: 5px 100px;
+    font-size: 25px;
+    td{
+        font-weight: bold;
+    }
+}
+input{
+    height: 25px;
+    width: 150px;
+    border-color: grey;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 20px;
+    color: blue;
+}
+button{
+    width: 250px;
+    margin: 10px;
+    height: 30px;
+    background-color:#f5f5f5;
+    font-size: 20px;
+    border-radius: 10px;
+}

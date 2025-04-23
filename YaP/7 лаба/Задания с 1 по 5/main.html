@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src = "main.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>(1 номер)</h1>
+
+<div id="text" >
+    <p> <b > <font size="5">  текст </font> </b></p>
+</div>
+<button onclick="remove_div()"> Нет текста </button>
+<button onclick="return_div()"> Есть текст </button>
+
+<div   id="number_two">
+    <h1>(2 номер)</h1>
+    <button id="selfhiddenbutton" onclick="hide_button()"> Нажми чтобы скрыть меня</button>
+</div>
+
+<h1>(3 номер)</h1>
+
+<h3 id="coords"> Координаты нажатия: </h3>
+<script>
+    const coords_h3 = document.getElementById("coords")
+    document.addEventListener('click',function (event) {
+        const x = event.clientX;
+        const y = event.clientY;
+        coords_h3.textContent = `Координаты нажатия: X = ${x}, Y = ${y}`
+    })
+</script>
+
+<h1>(4 номер)</h1>
+
+<button onclick="activate_alert()"> Активировать alert уведомление о щелчке </button>
+<button onclick="remove_alert()"> Дизактивировать alert уведомление о щелчке </button>
+
+<h1>(5 номер)</h1>
+
+<input id = "changed_input" type="text" placeholder="Уведомления об изменение текста" size="28" >
+<script>
+    document.getElementById("changed_input").addEventListener('change', function (){
+        alert("Тест был изменен!!!")
+    })
+
+</script>
+</body>
+</html>
